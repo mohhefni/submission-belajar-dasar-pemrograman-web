@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+*, *::after, *::before{
+   padding: 0px;
+   margin: 0px;
+   box-sizing: border-box;
+   /* border: 2px solid #000; */
+}
+
+body{
+   font-family: 'Quicksand', sans-serif;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   background-image: url("/assets/images/polygon-scatter-haikei.svg");
+   background-repeat: no-repeat;
+   background-position: right; 
+}
+
+header.navbar-container {
+   max-width: 70%;
+   width: 100%;
+   margin-inline: auto;
+   padding-block: 1rem;
+   z-index: 999;
+   display: flex;
+   justify-content: space-between;
+}
+
+header.navbar-container .nav-list ul {
+   display: flex;
+   gap: 2rem 1rem;
+   margin-block-start: .9rem;
+}
+
+header.navbar-container .nav-list li {
+   list-style-type: none;
+   padding-inline-end: .8rem;
+}
+
+header.navbar-container .nav-list li a {
+   text-decoration: none;
+   font-size: 1.0em;
+   font-weight: 500;
+   color: black;
+   transition: all .2s ease-in-out;
+   font-weight: 700;
+}
+
+header.navbar-container .nav-list li:hover a {
+   /* background-color: #2f91be; */
+   background-color: #c9e9f7;
+   color: black;
+}
+
+header.navbar-container .mode button {
+   background-color: #fff;
+   border: 2px solid #e0e0e0;
+   color: #000;
+   cursor: pointer;
+   display: inline-flex;
+   border-radius: 10px;
+}
+
+header.navbar-container .mode button i {
+   padding: .4em .6em;
+   font-size: 1.5em;
+   color:#000;
+}
+
+header.navbar-container .mode button:hover {
+   border: 2px solid #2f91be;
+}
+
+header.navbar-container .mode button i:hover {
+   color:#2f91be;
+}
+
+main {
+   max-width: 70%;
+   width: 100%;
+   margin-inline: auto;
+   padding-block: 1rem;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+main #beranda {
+   height: 90vh;
+   padding-block-start: 3.8em
+}
+
+main #beranda h1 {
+   font-size: 3.5em;
+
+}
+
+main #beranda h1 span{
+   display: inline-block;
+   color: #000;
+   background: linear-gradient(-45deg, #60efff, #0061ff);
+}
+
+main #beranda p {
+   max-width: 700px;
+   margin-block-start: .9em;
+   font-size: 1.3em;
+   color: #464646;
+}
+
+/* CSS */
+main #beranda a {
+   display: inline-block;
+   margin-block-start: 1.8em;
+   font-family: 'Quicksand', sans-serif;
+   text-decoration: none;
+   background-color: #fff;
+   color: #000;
+   cursor: pointer;
+   padding: .3em .9em;
+   font-size: 1.1em;
+   position: relative;
+   border: 2px solid #fff;
+   font-weight: 700;
+   transform: translateZ(0) scale(1);
+   transition: transform .2s;
+}
+
+main #beranda a:hover{
+   transform: scale(1.05);
+}
+
+main #beranda .about:before {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: linear-gradient(-45deg, #60efff, #0061ff);
+   transform: translate3d(0px, 3px, 0) scale(1.1);
+   filter: blur(10px);
+   opacity: 40.9;
+   transition: opacity 0.3s;
+   border-radius: inherit;
+}
+
+main #beranda .about::after {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: inherit;
+   border-radius: inherit;
+}
