@@ -16,6 +16,9 @@
    --fourteenth-color: #ffffff;
    --fifteenth-color: #000000;
    --sixteenth-color: #60efff;
+   /* nav active */
+   --eighteenth-color: #00ff87;
+   --nineteenth-color: #000000;
    /* arrow */
    --fourth-color: #40e640;
    /* h1*/
@@ -46,6 +49,9 @@
    --fourteenth-color: #000000;
    --fifteenth-color: #60efff;
    --sixteenth-color: #000000;
+   /* nav active */
+   --eighteenth-color: #000000;
+   --nineteenth-color: #00ff87;
    /* arrow */
    --fourth-color: #00c8ff;
    /* h1*/
@@ -114,6 +120,11 @@ nav .list-item li a {
    font-weight: 700;
    color: var(--third-color);
    background-color: var(--fourteenth-color);
+}
+
+nav .list-item li a.active {
+   background-color: var(--eighteenth-color);
+   color: var(--nineteenth-color);
 }
 
 nav .list-item li:hover a {
