@@ -18,7 +18,7 @@
         </ul>
       </nav>
       <div class="mode">
-        <button><i class="fa-regular fa-moon"></i></button>
+        <button id="button-icon"><i class="fa-regular fa-moon" id="icon"></i></button>
       </div>
     </header>
     <main>
@@ -278,4 +278,17 @@
     </footer>
   </body>
   <script src="/assets/js/script.js"></script>
+  <script>
+    let buttonIcon = document.getElementById('button-icon');
+    let icon = document.getElementById('icon');
+
+    buttonIcon.onclick = function () {
+      document.body.classList.toggle('dark-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        icon.className = 'fa-regular fa-sun';
+      } else {
+        icon.className = 'fa-regular fa-moon';
+      }
+    };
+  </script>
 </html>
