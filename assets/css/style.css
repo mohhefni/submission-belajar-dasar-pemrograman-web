@@ -74,9 +74,6 @@
 
 body{
    font-family: 'Quicksand', sans-serif;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
    background-image: url("/assets/images/polygon-scatter-haikei.svg");
    background-repeat: no-repeat;
    background-position: right top 140px;
@@ -88,13 +85,14 @@ nav {
    z-index: 999;
    position: sticky;
    top: 0;
+   right: 0;
    background-color: var(--primary-color);
    box-shadow: 1px 1px var(--eighth-color);
 }
 
 nav .list-item {
    width: 100%;
-   max-width: 70%;
+   max-width: 1100px;
    margin-inline: auto;
    padding-block: 1rem;
    justify-content: space-between;
@@ -137,8 +135,9 @@ nav .list-item .mode button {
    border: 1px solid var(--seventh-color);
    color: var(--secondary-color);
    cursor: pointer;
-   display: inline-flex;
+   display: block;
    border-radius: 10px;
+   margin-block-start: 0.5em;
 }
 
 nav .list-item .mode button i {
@@ -155,8 +154,13 @@ nav .list-item .mode button i:hover {
    color:var(--seventeenth-color);
 }
 
+.container {
+   max-width: 1100px;
+   margin-inline: auto;
+}
+
+
 header {
-   max-width: 70%;
    width: 100%;
    margin-inline: auto;
    height: 90vh;
@@ -255,9 +259,6 @@ header .arrow i:hover {
 }
 
 main {
-   max-width: 70%;
-   width: 100%;
-   margin-inline: auto;
    padding-block: 1rem;
    flex: 1;
    display: flex;
@@ -354,7 +355,8 @@ main {
    font-size: .9em;
 }
 
-#blog .blog-content > a{
+#blog > a{
+   margin-block-start: 1.5em;
    display: inline-block;
    text-decoration: none;
    background-color: var(--primary-color);
@@ -367,10 +369,9 @@ main {
    font-weight: 700;
    transform: translateZ(0) scale(1);
    transition: transform .2s;
-   margin-block-end: 4.4em;
 }
 
-#blog .blog-content > a:hover{
+#blog > a:hover{
    transform: scale(1.04);
    box-shadow: 2px 2px var(--eighth-color);
 }
@@ -467,7 +468,8 @@ main {
    transform-origin: bottom left;
  }
 
- #project .project-content > a{
+ #project > a{
+   margin-block-start: 1.5em;
    display: inline-block;
    text-decoration: none;
    background-color: var(--primary-color);
@@ -480,29 +482,30 @@ main {
    font-weight: 700;
    transform: translateZ(0) scale(1);
    transition: transform .2s;
-   margin-block-end: 4.4em;
 }
 
-#project .project-content > a:hover{
+#project > a:hover{
    transform: scale(1.04);
    box-shadow: 2px 2px var(--eighth-color);
 }
 
 main .about-container{
    display: flex;
-   margin-block-end: 6em;
+   margin-block-end: 9em;
+   gap: 1em 3em;
+   flex-wrap: wrap;
 }
 
 .about-container #about {
-   flex-basis: 75%;
+   flex-basis: 70%;
 }
 
 .about-container aside {
-   flex-basis: 25%;
+   flex-basis: 20%;
 }
 
 .about-container aside img {
-   padding-block-start: 6.5em;
+   padding-block-start: 9em;
    width: 100%;
 }
 
@@ -520,9 +523,7 @@ main .about-container{
 footer {
    padding-block-start: 2em;
    border-top: 1px solid var(--thirteenth-color);
-   max-width: 70%;
    width: 100%;
-   margin-inline: auto;
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -556,3 +557,196 @@ footer .copyright {
    font-size: 1em;
    margin-block-end: 1.2em;
 }
+
+@media(max-width:1150px){
+   .container{
+      margin-inline: 30px;
+   }
+
+   nav{
+      padding-inline: 30px;
+   }
+}
+
+@media(max-width:950px){
+   #blog .blog-content .post-item {
+      flex-basis: 48%;
+   }
+   
+   #project .project-content .project-item {
+      flex-basis: 48%;
+   }
+
+   .about-container aside img {
+      padding-block-start: 10em;
+   }
+
+   .about-container #about {
+      flex-basis: 60%;
+   }
+   
+   .about-container aside {
+      flex-basis: 25%;
+   }
+ }
+
+ @media(max-width:650px){
+   nav .list-item li a {
+      font-size: .8em;
+   }
+   
+   header h1 {
+      font-size: 2.9em;
+   }
+   
+   header h1 span {
+      font-size: 50px;
+    }
+
+    header p {
+      font-size: 1em;
+   }
+
+   #blog h1 span, #project h1 span, #about h1 span{
+      font-size: 1em;
+   }
+
+   #blog .blog-content .post-item {
+      flex-basis: 100%;
+   }
+   
+   #project .project-content .project-item {
+      flex-basis: 100%;
+   }
+
+   #about h2 {
+      font-size: 2em;
+   }
+
+   #about P {
+      font-size: .8em;
+   }
+
+   #blog .blog-content .post-item .post-title {
+      font-size: 1em;
+   }
+   
+   #blog .blog-content .post-item .post-status {
+      font-size: .8em;
+   }
+
+   #blog .blog-content .post-item .post-description {
+      font-size: .8em;
+   }
+
+   #project .project-content .project-item .project-title {
+      font-size: 1em;
+   }
+   
+   #project .project-content .project-item .project-description {
+      font-size: .8em;
+   }
+ }
+
+  @media(max-width:450px){
+   header h1 {
+      font-size: 2.2em;
+   }
+   
+   header h1 span {
+      font-size: 30px;
+    }
+  }
+
+ @media(max-width:375px){
+   nav .list-item li a {
+      font-size: .6em;
+   }
+
+   nav .list-item ul {
+      gap: 2rem .3rem;
+   }
+   
+   header h1 {
+      font-size: 2em;
+   }
+   
+   header h1 span {
+      font-size: 25px;
+    }
+
+    header p {
+      font-size: .7em;
+   }
+
+   #blog h1 span, #project h1 span, #about h1 span{
+      font-size: .6em;
+   }
+
+   #blog .blog-content .post-item .post-title {
+      font-size: .8em;
+   }
+   
+   #blog .blog-content .post-item .post-status {
+      font-size: .5em;
+   }
+
+   #blog .blog-content .post-item .post-description {
+      font-size: .5em;
+   }
+
+   #project .project-content .project-item .project-title {
+      font-size: .8em;
+   }
+   
+   #project .project-content .project-item .project-description {
+      font-size: .5em;
+   }
+   #project .project-content .project-item a {
+      gap: .5rem .7rem;
+   }
+
+   .about-container #about {
+      flex-basis: 100%;
+   }
+   
+   .about-container aside {
+      flex-basis: 100%;
+   }
+
+   .about-container aside img {
+      padding-block-start: 0.1em;
+   }
+
+   nav .list-item .mode button i {
+      font-size: 1.2em;
+   }
+
+   header p + a {
+      font-size: .8em;
+   }
+
+   #blog > a{
+      font-size: .7em;
+   }
+   
+   #project > a{
+      font-size: .7em;
+   }
+
+   #about h2 {
+      font-size: 1.5em;
+   }
+
+   footer .reach-me h3 {
+      font-size: .7em;
+   }
+   
+   footer .reach-me .social-media {
+      font-size: 1.3em;
+   }
+   
+   footer .copyright {
+      margin-block-end: 1em;
+   }
+ }
